@@ -1,0 +1,520 @@
+/* 主页index.html的样式表 */
+
+/* 设置大框架 */
+.topbar-wrapper{
+    width: 100%;
+    background-color: #333;
+    height: 40px;
+    line-height: 40px;
+}
+/* 设置左侧导航栏 */
+.service,.topbar li{
+    float: left;
+}
+.app{
+    /* 开启相对定位，是为了下面的小三角 */
+    position: relative;
+}
+/* 设置小三角 */
+/* .app-wrapper:hover .app::after */
+.app::after{
+    content: '';
+    display: none;
+    /* 开启定位后这样才不会溢出 */
+    position: absolute;
+    /* 这样才不会变成梯形 */
+    width: 0;
+    height: 0;
+    /* 设置小三角的代码 */
+    border:8px solid transparent;
+    border-top: none;
+    border-bottom-color: #fff;
+    /* 水平居中 */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+/* .app-wrapper:hover .app .qrcode{
+    display: block; */
+    .app:hover .qrcode,
+    .app:hover::after{
+        display: block;
+        height: 148px;
+    }
+/* 设置下载app的下拉 */
+.app .qrcode{
+    /* display: none; */
+    /* 脱离文档流，不占据父元素空间 */
+    position: absolute;
+    left: -36px;
+    width: 124px;
+    /* height: 148px; */
+    height: 0px;
+    overflow: hidden;
+    /* 上两行代码，是通过高度来隐藏内容
+            通过高度隐藏内容的好处是添加效果方便操作
+    */
+    background-color: #fff;
+    /* 重置行高，不然文字会去外面 */
+    line-height: 1;
+    /* 文字水平居中 */
+    text-align: center;
+    box-shadow:0 0 10px rgba(0, 0, 0, .3);
+
+    /* transition: 用于为样式添加过渡效果  要有具体的值比如0-100
+        10-100 不能auto-100 浏览器无法识别
+    */
+    transition:height 0.3s;
+    z-index: 9999;
+}
+/* 设置二维码大小 */
+.app .qrcode img{
+    width: 90px;
+    margin:17px;
+    margin-bottom: 10px;
+}
+/* 设置文字大小 */
+.app .qrcode span{
+    font-size: 14px;
+    color: #000;
+}
+/* 设置右侧 */
+.shop-car,.user-info{
+    float: right;
+}
+/* 设置超链接颜色 */
+.topbar a{
+    display: block;
+    color: #b0b0b0;
+    font-size: 12px;
+}
+/* 设置超链接移入的效果 */
+.topbar a:hover{
+    color: #fff;
+}
+/* 设置分割线的效果 */
+.topbar .line{
+    color: #424242;
+    font-size: 13px;
+    margin:0 8px;
+    margin-top: -1px;
+}
+/* 设置购物车的样式 */
+.shop-car a{
+    width: 120px;
+    background-color: #424242;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid #fff;
+    z-index: 999;
+}
+/* 设置购物车与旁边字体的边距 */
+.shop-car{
+    margin-left: 25px;
+}
+/* 设置购物车与旁边的边距 */
+.shop-car i{
+    margin-right: 1px;
+}
+/* 设置购物车移入后的样式 */
+.shop-car:hover a{
+    background-color: #fff;
+    color: #ff6700;
+}
+/* 设置下拉框 */
+.shop-car .box1{
+    display: none;
+    position: absolute;
+    z-index: 998;
+    width: 317px;
+    height: 100px;
+    background-color: #fff;
+    box-shadow:0 0 8px rgba(0, 0, 0, .2);
+    text-align: center;
+    right: 0;
+}
+.shop-car .box1 span{
+    display: block;
+    /* 将其居中 */
+    margin-top: 28px;
+}
+/* 开启相对定位，保证下拉框以他定位 */
+.shop-car .box2{
+    position: relative;
+}
+
+.shop-car .box2:hover .box1{
+    display: block;
+}
+
+/* 设置外部容器，保证其占据整个页面 */
+.header-wrapper{
+    width: 100%;
+}
+/* 设置内部容器的高度 */
+.header{
+    height: 100px;
+}
+
+.header .logo{
+    float: left;
+    margin-top: 22px;
+    width: 55px;
+    height: 55px;
+}
+
+.header .logo a{
+    display: block;
+    width: 55px;
+    height: 55px;
+    background-image: url(../img/logo-mi2.png);
+    /* 裁剪图片 */
+    background-size:55px 55px;
+}
+
+/* 设置中间的导航条 */
+.header .nav-wrapper{
+    float: left;
+    margin-left: 7px;
+}
+.nav-wrapper .nav{
+    /* 因为ul是被内容撑开，加内边距又会增加可见框大小
+    所以要么固定宽度，要么将内边距的距离从宽度中减去
+    */
+    /* width: 792px; */
+    height: 100px;
+    line-height: 100px;
+    padding-left: 58px;
+}
+.nav > li{
+    float: left;
+    margin-right: 20px;
+}
+/* 设置左侧导航条 */
+.all-goods-wrapper{
+    position: relative;
+}
+
+.left-menu{
+    width: 234px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, .4);
+    /* 重置行高，因为会继承前面的行高 */
+    line-height: 1;
+    /* 开启定位，一是为了确定位置，二是为了设置偏移量 */
+    position: absolute;
+    left: -120px;
+    z-index: 999;
+    /* 设置上下的边距，不过要从总高度里减去内边距的内容 */
+    padding:20px 0;
+}
+
+.left-menu li a{
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    /* 设置左右边距 */
+    padding:0 30px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.left-menu li a:hover{
+    color: #fff;
+    background-color: #ff6700;
+}
+
+.left-menu li i{
+    float: right;
+    line-height: 42px;
+    color: #DFDFDF;
+    font-size: 18px;
+}
+
+
+.nav > li > a{
+    display: block;
+    font-size: 16px;
+}
+.nav-wrapper a:hover{
+    color: #ff6700;
+}
+.nav-wrapper .all-goods{
+    /* 将全部商品隐藏，又要占据位置
+    不然会把后面的字体拉进
+        */
+    visibility: hidden;
+}
+/* 下拉层想相对于谁定位，就给谁开相对定位，自身开绝对定位 */
+.header-wrapper{
+    position: relative;
+}
+
+/* 因为.goods-info都是类选择器，且选择的是同一个类
+所以这个放在hover下面会导致，.goods-info将hover覆盖
+所以要将.goods-info放到hover上方
+*/
+.nav-wrapper .goods-info{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: #fff;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition:height 0.4s;
+    z-index: 9999;
+}
+
+/* .nav li:hover:not(:first-of-type):not(:last-of-type):not(:nth-child(9)) ~ .goods-info,
+        不支持这种写法，可读性差且过于麻烦，加类名就行
+*/
+.nav .show-goods:hover ~ .goods-info,
+.goods-info:hover{
+    height: 228px;
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow:0 5px 5px rgba(0, 0, 0, .1);
+}
+
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+    float: right;
+    margin-top: 25px;
+}
+
+.search-wrapper .search-inp{
+    box-sizing: border-box;
+    width: 244px;
+    height: 50px;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    padding:0 10px;
+    float: left;
+    outline: none;
+    border:1px solid rgb(224, 224, 224);
+}
+
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus + button{
+    border-color: #ff6700;
+}
+
+.search-wrapper .search-btn{
+    width: 52px;
+    height: 50px;
+    border: none;
+    padding: 0;
+    float: left;
+    border:1px solid rgb(224, 224, 224);
+    border-left: none;
+}
+.search-wrapper .search-btn:hover{
+    background-color: #ff6700;
+    color: #fff;
+    border: none;
+}
+
+/* 设置banner */
+.banner{
+    /* 开启相对定位，里面的东西会相对于banner定位，并且继承 */
+    position: relative;
+    /* 设置高度，解决高度塌陷，clearfix在这没用，因为里面没东西*/
+    height: 460px;
+}
+.banner .img-list li{
+    /* 将图片叠在一起 */
+    position: absolute;
+}
+.banner img{
+    width: 100%;
+    /* 消除图片底下的缝 */
+    vertical-align: top;
+}
+
+.pointer{
+    /* 开启定位，才能看到哦 */
+    position: absolute;
+    bottom: 22px;
+    right: 35px;
+}
+
+.banner .pointer a{
+    float: left;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(0, 0, 0, .4);
+    border:3px solid rgba(255, 255, 255, .4);
+    border-radius: 50%;
+    margin-left: 6px;
+}
+
+.banner .pointer a:hover,
+.banner .pointer a.active{
+    /* 设置反色，将边框和背景颜色相互调换 */
+    background-color: rgba(255, 255, 255, .4);
+    border-color: rgba(0, 0, 0, .4);
+}
+/* 两个箭头 */
+.prev-next a{
+    width: 41px;
+    height: 69px;
+    /* 运用雪碧图 */
+    background-image: url(../img/icon-slides.png);
+    position: absolute;
+    /* 设置垂直居中 */
+    top: 0;
+    bottom: 0;
+    margin:auto 0;
+}
+
+.prev-next .prev{
+    left: 234px;
+    background-position:-84px 0;
+}
+.prev-next .prev:hover{
+    background-position:0 0;
+}
+
+.prev-next .next{
+    right: 0;
+    background-position:-125px 0;
+}
+.prev-next .next:hover{
+    background-position:-42px 0;
+}
+
+/* 设置回到顶部元素 */
+.back-top{
+    width: 26px;
+    height: 206px;
+    border:1px solid #f5f5f5;
+    position: fixed;
+    bottom: 280px;
+    right: 50%; /* right是视口的50% */
+    margin-right: -641px;
+    /* 
+            (在这里不用考虑内容框的大小，所以是以下等式)
+        left + margin-left + width + margin-right+right=可视窗的宽度
+        auto + 0 + 26+ 0 + 50% =可视窗宽度 （所以margin越小，left越大）
+    */
+}
+
+.item li{
+    /* 水平居中 */
+    text-align: center;
+    border-bottom:1px solid #f5f5f5;
+    
+}
+
+
+.item li a{
+    display: block;
+    width: 25px;
+    height: 40px;
+    background-color: #fff;
+    color: #757575;
+    font-size: 18px;
+    /* 垂直居中 */
+    line-height: 40px;
+}
+.item li a:hover{
+    color: #ff6700;
+}
+
+/* 设置广告栏 */
+.ad{
+    height: 170px;
+    margin-top: 14px;
+}
+.ad .shortcut,
+.ad .imgs,
+.ad li{
+    float: left;
+}
+
+.shortcut{
+    width: 228px;
+    height: 168px;
+    margin-right: 14px;
+    background-color: #5f5750;
+    text-align: center;
+    /* 因为里面的上边框，所以要加内边距 */
+    padding-top: 2px;
+    /* 因为左边框的问题，不过都得从总高度中减去，不然会加大盒子 */
+    padding-left: 6px;
+}
+
+.shortcut li a{
+    display: block;
+    width: 76px;
+    height: 84px;
+    color: #cfccca;
+    font-size: 12px;
+    /* 去除外边距折叠问题，因为一个一个加clearfix太麻烦
+    ，所以在这里开启BFC BFC特点：子与父的外边距不会重叠
+    */
+    overflow: hidden;
+}
+/* 设置左侧链接的边框 */
+.shortcut li{
+    /* 保证边框都是相对于每个li定位 */
+    position: relative;
+}
+/* 设置上边框 */
+.shortcut li::before{
+    content: '';
+    /* 因为其他元素浮动脱离文档流了，所以他也得脱离文档流
+        ，且他自身也需要定位
+    */
+    position: absolute;
+    width: 64px;
+    height: 1px;
+    background-color: #665e57;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+}
+/* 设置左边框 */
+.shortcut li::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 70px;
+    background-color: #665e57;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin:auto 0;
+}
+
+
+.shortcut li a:hover{
+    color: #fff;
+}
+
+.shortcut li a i{
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+
+/*设置图片*/
+/* 因为图片填满的是li 所以要设置在li，不能是a，
+且a也是在li里，外边距设置在a里也无法隔开，除非是直接a，没有li
+*/
+.ad .imgs li{
+    width: 316px;
+    margin-right: 15px;
+}
+.ad .imgs li:last-child{
+    margin-right: 0;
+}
+.ad .imgs a img{
+    width: 100%;
+    vertical-align: top;
+}

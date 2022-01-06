@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        表单：
+            -在现实生活中表单用于提交数据
+            -在网页中也可以使用表单，网页中的表单用于将本地的数据提交给远程的服务器
+            -使用form标签来创建表单
+     -->
+    <!-- 
+         form的属性
+            action 表单要提交的服务器的地址
+      -->
+    <form action="./target.html">
+        <!-- 
+            文本框
+            注意：数据要提交到服务器中，必须要为元素指定一个name属性值
+            文本框的value属性值，就是文本框中填写的内容
+         -->
+        文本框<input type="text" name="username">
+        <br>
+        <!-- 
+              密码框
+          -->
+        密码框<input type="password" name="password">
+        <br>
+        <!-- 
+               单选框
+                -必须要指定一个相同的name值进行分组，才会单选
+                -像这种选择框，必须要指定一个value属性，value属性最终会作为用户填写的一个值，传递给服务器
+                -checked 可以将单选按钮设置为默认状态
+            -->
+        单选按钮<input type="radio" name="hello" value="a">
+        单选按钮<input type="radio" name="hello" value="b" checked>
+        <br>
+        <!-- 
+               多选框
+            -->
+        多选框<input type="checkbox" name="test" value="1">
+        <input type="checkbox" name="test" value="2" checked>
+        <input type="checkbox" name="test" value="3">
+        <input type="checkbox">
+        <br>
+        <!-- 下拉列表
+                select为下拉列表，列表中需要添加选项option
+                    option中添加selceted 将某个选项设置为默认选中20
+        -->
+        <select name="哈哈">
+            <option value="i">选项1 </option>
+            <option selected value="ii">选项2 </option>
+            <option value="iii">选项3 </option>
+            
+        </select>
+        <br><br><br>
+        <!-- 
+             提交按钮
+          -->
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

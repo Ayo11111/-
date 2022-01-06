@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1.先执行执行栈中的同步任务
+        2、异步任务(回调函数)放入任务队列中
+        3、一旦执行栈中的所有的同步任务执行完毕，系统就会按次序读取任务队列中的异步任务
+            于是被读取的异步任务结束等待状态，进入执行栈，开始执行
+
+            JS的异步是通过回调函数实现的
+
+            一般而言，异步任务有以下三种类型
+
+            普通事件：如click resize等
+            资源加载  如load、error等
+            定时器  包括setinterval settimeout
+     -->
+</body>
+</html>

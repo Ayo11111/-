@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选练习</title>
+    <script>
+        window.onload = function () {
+            var all = document.getElementById('CheckAll');
+
+            /*
+                全选按钮
+                - 点击按钮以后，四个多选框全被选中
+            */
+         //#All
+         var All = document.getElementById('All');
+         All.onclick = function () {
+             //获取四个多选框
+             var sport = document.getElementsByName('sport');
+             //遍历sport
+             for(var i = 0;i<sport.length;i++){
+                 //checked属性 设置或返回 checkbox 是否应被选中。
+                 //设置四个多选框都被选中
+                sport[i].checked = true;
+
+                //获取状态
+                // alert(sport[i].checked);
+             }
+
+             //将全选/全不选设置为选中状态
+             all.checked = true;
+         };
+
+         /*
+            全不选按钮：
+            - 点击按钮以后，四个框全部取消选择
+         */
+         //#No
+                //绑定全不选按钮
+            var No = document.getElementById('No');
+                //为按钮绑定单击事件
+            No.onclick = function () {
+                //获取四个多选框
+                var sport = document.getElementsByName('sport');     
+                //遍历数组
+                for(var i = 0;i<sport.length;i++){
+                    //设置checked值
+                    sport[i].checked = false;
+                }
+
+                //将全选/全不选设置为不选中状态
+                all.checked = false;
+            };
+
+            /*
+            反选按钮
+            */
+         //#Rev
+            var Rev = document.getElementById('Rev');
+            Rev.onclick = function () {
+                var sport = document.getElementsByName('sport');
+                for(var i = 0;i < sport.length;i++){
+                    // if (sport[i].checked == false) {
+                    //     sport[i].checked = true;
+                    // }else{
+                    //     sport[i].checked = false;
+                    // };
+                    
+                    //这个和上面这段代码实现的功能一样
+                    sport[i].checked = !sport[i].checked
+
+                    all.checked = true;
+                    if (!sport[i].checked) {
+                    all.checked = false;     
+                    }
+         };
+
+        };
+
+            /*
+                提交按钮
+                - 点击按钮以后将所有选中的按钮提交
+            */
+         //#Sub
+            var Sub = document.getElementById('Sub');
+            Sub.onclick = function () {
+                var sport = document.getElementsByName('sport');
+                // 遍历数组sport
+                for(var i = 0 ;i < sport.length;i++){
+                    //判断多选框是否选中
+                    if (sport[i].checked == true) {
+                        alert(sport[i].value);
+                    }
+                }  ;
+            };
+          
+            /*
+                全选/全不选 多选框
+                - 当它选中时，其余的也选中，当它取消时其余的也取消
+
+                在事件的响应函数中，响应函数是给谁绑定的，this就是谁
+            */
+            
+            all.onclick = function () {
+                var sport = document.getElementsByName('sport');
+
+                // if (all.checked == true) {
+                //     for(var i = 0 ;i < sport.length;i++){
+                //         sport[i].checked = true;
+                //     }
+                // }else{
+                //     for(var i = 0 ;i < sport.length;i++){
+                //         sport[i].checked = false;
+                //     }
+                // }
+
+                //将按钮关联
+                for(var i = 0 ;i < sport.length;i++){
+                    sport[i].checked = this.checked;
+
+                };  
+            };
+
+            /*
+                如果四个多选框全都选中，则CheckAll也应该选中
+                如果四个多选框有一个没有选中，则CheckAll也不应该选中
+            */
+            var sport = document.getElementsByName('sport');
+            
+               for(var i = 0;i < sport.length;i++){
+                //为四个多选框逐个绑定单击事件
+                sport[i].onclick = function () {
+                    
+                    // 立个flag，设置这个按钮默认情况下就是全选状态
+                    // 当进入下面的判断时，就说明有多选框没被选中了
+                    all.checked = true;
+
+                    for(var j = 0;j < sport.length;j++){
+
+                        //使用逆向思维，如果四个多选框有一个没被选中，全选/全不选按钮就不被选中
+                        // !sport[j].checked 这行代码的意思为，多选框按钮不被选择的情况
+                        // 因为默认值为true
+                        if (!sport[j].checked) {
+                            all.checked = false;
+
+                            break;
+                        }
+                    }
+
+
+                };
+
+               } 
+
+        };
+    </script>
+</head>
+<body>
+你最喜欢的运动是?
+<input type="checkbox" id="CheckAll">全选/全不选 <br>
+<input type="checkbox" name="sport" value="足球">足球
+<input type="checkbox" name="sport" value="篮球">篮球
+<input type="checkbox" name="sport" value="羽毛球">羽毛球
+<input type="checkbox" name="sport" value="乒乓球">乒乓球 <br>
+<button id="All">全选</button>
+<button id="No">全不选</button>
+<button id="Rev">反选</button>
+<button id="Sub">提交</button>
+</body>
+</html>

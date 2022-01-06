@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+      
+        /* 统一去除下划线 */
+        a{text-decoration: none;}
+        .box1{
+            margin-top: 27px;
+            width: 300px;
+            height: 356px;
+            margin: 50px auto;
+            border-top: 1px solid #DDDDDD;
+            overflow: hidden;
+        }
+        .title1{
+            width: 300px;
+            height: 40px;
+            
+        }
+        .title{
+            
+            color: #404040;
+            font-size: 16px;
+            border-top: 1px #f34540 solid;
+            margin-top: -1px;
+            
+            /* 为了边框能与文字宽度一致,需要将h2转换为行内块元素 */
+            display: inline-block;
+            /* 将文字下移 */
+            padding-top: 10px;
+        }
+        .title a{
+            
+            
+            color: #404040;
+            /* 字体加粗 */
+            font-weight: bold;
+        }
+        .title a:hover{
+                color: #f34540;
+        }
+        .title i{
+            font-size: 16px;
+            color: #888888;
+        }
+        /* 设置图片容器的高度 */
+        .news{
+            height: 150px;
+        }
+        .img a:hover{
+            color: red;
+        }
+        .box1 .box2{
+         
+           
+            font-size: 14px;
+            color: #666666;
+            margin-top: 20px;
+        }
+        .box2 .box3{
+            /* 设置每行字体的间隔,没必要所有都行高居中 */
+            margin-bottom: 17px;
+        }
+            
+        
+        .box3 a{
+                font-size: 14px;
+                color: #666666;
+               
+        }
+        .box3 a:hover{
+            color: #f34540;
+        }
+        /* 通过伪元素before添加项目符号 */
+        .box3 a::before{
+            content: "😑";
+            font-size: 14px;
+            color: #DDDDDD;
+            margin-right: 5px;
+            
+        }
+        .title{padding-left: 10px;}
+        /* 设置图片文字效果 */
+        .news-img .img-title{
+            /* 向上移动文字 */
+            margin-top: -30px;
+            color: #fff;
+            font-weight: bold;
+            padding-left: 25px;
+        }
+        .news-img{
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+   <div class="box1">
+    <div class="title1">
+    <h2 class="title">
+        <a href="###">手机</a>
+        <i>·</i>
+        <a href="###">数码</a>
+    </h2>
+    </div>
+    <div class="news">
+    <a class="news-img" href="###">
+        <img src="./picture2/cec7c45bp00qtzbjc0096c000go00b4c.webp"width="300px" height="150px" alt="手机渲染图">
+        <h3 class="img-title">折叠手机全新形态渲染图</h3>
+    </a>
+    </div>
+    <ul class="box2">
+        <li class="box3">
+            <a href="###">iphone 13"玫瑰粉"版曝光</a>
+        </li>
+        <li class="box3">
+            <a href="###">三星,LG开始为iphone13生产面板</a>
+        </li>
+        <li class="box3">
+            <a href="###">苹果尴尬!自研M1芯片有巨大漏洞:不改设</a>
+        </li>
+        <li class="box3">
+            <a href="###">《黑神话:悟空》模型渲染时沉迷幻5 分享</a>
+        </li>
+
+
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        #wrapper{
+            width: 590px;
+            height: 100%;
+            /* 设置文本居中 */
+            text-align: center;
+            margin:50px auto;
+            padding: 10px;
+            background-color: #bfa;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+
+            /*
+                切换图片就是修改img标签的src属性
+            */
+            var img =document.getElementsByTagName('img')[0];
+
+        //创建一个数组保存路径
+        var picturearr = ["./picture/3.jpg","./picture/4.jpg","./picture/5.jpg","./picture/6.jpg","./picture/7.jpg"];
+        //创建一个变量，保存图片显示的索引
+        var index = 0;
+
+        //获取id为info的p元素
+        var info = document.getElementById('info');
+        //设置提示文字
+        info.innerHTML = "一共"+ (picturearr.length) +"张图片，当前是第"+ (index+1) +"张";
+
+
+            //获取上一张按钮    
+            document.getElementById('prev');
+            //给按钮绑定一个单击事件
+            prev.onclick = function () {
+                //点击上一张使index自减1
+                index--;
+                //判断index是否小于0
+                if (index < 0 ) {  
+                    index = picturearr.length-1;
+                };
+                img.src = picturearr[index];
+
+                //当点击按钮以后，重新设置信息
+                info.innerHTML = "一共"+ (picturearr.length) +"张图片，当前是第"+ (index+1) +"张";
+            };
+
+            //获取下一张按钮
+            document.getElementById('next');
+            //给按钮绑定一个单击事件
+            next.onclick = function () {
+                    index++;
+                    //判断index是否大于数组
+                    if (index >picturearr.length-1 ) {
+                        index = 0;
+                    };
+                //切换图片就是修改img的src属性
+                //要修改一个元素的属性 元素.属性 = 属性值
+                img.src = picturearr[index];
+                
+                 //当点击按钮以后，重新设置信息
+                 info.innerHTML = "一共"+ (picturearr.length) +"张图片，当前是第"+ (index+1) +"张";
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <p id="info"></p>
+            <img src="./picture/3.jpg" alt="好东西">
+
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            
+            
+
+            for(var i =2;i<=100;i++){
+
+
+                //创建一个布尔值，用来保存结果，默认i是质数
+                //得放在循环中，要是放在外面，flag值为false时就不会重置为true
+                var flag = true;
+
+                for(var j =2;j<i;j++){
+
+                    if (i % j == 0) {
+
+                        //如果进入判断则证明i不是质数，修改flag值为false
+                        flag = false;
+                    }
+                }
+                //这个判断语句要放在循环中，放在外面的话只会输出最后一个i
+                if (flag) {
+                    console.log(i);
+                }
+            }
+            
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

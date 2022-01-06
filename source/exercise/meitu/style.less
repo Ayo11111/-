@@ -1,0 +1,159 @@
+a{
+    text-decoration: none;
+    color: #fff;
+
+    &:hover{
+        color: rgb(197, 196, 196);
+    }
+}
+.top-bar-wrapper{
+    background-color: #000;
+}
+// 导航条外部的容器
+.top-bar{
+    max-width: 1200px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    background-color: #000;
+    padding:0 14px;
+}
+
+// 设置左侧导航图片
+.left-menu{
+    // position: relative;
+    // 设置菜单
+    .nav{
+        display: none;
+        position: absolute;
+        top: 48px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        // 设置背景颜色
+        background-color: #000;
+        // 太靠上，将其往下走
+        padding-top: 60px;
+
+        li{
+            width: 80%;
+            margin:0 auto;
+            border-bottom:1px solid #333333;
+            a{
+                display: block;
+                line-height: 44px;
+                font-size: 14px;
+            }
+
+            &:last-child a{
+                display: inline-block;
+                margin-right: 6px;
+            }
+
+            span{
+                color: #fff;
+                font-size: 14px;
+            }
+        }
+    }
+    //图标
+    .menu-icon{
+        width: 18px;
+        height: 48px;
+        position: relative;
+        //导航的线
+        li{
+            width: 18px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+
+            // 修改变形原点
+            transform-origin: left;
+            transition:.5s;
+        }
+
+        li:nth-child(1){
+            top: 18px;
+        }
+        li:nth-child(2){
+            top: 24px;
+        }
+        li:nth-child(3){
+            top: 30px;
+        }
+    }
+    // 鼠标移入后的效果，正常项目这个效果通过js实现
+    &:active{
+        // 显示下拉菜单
+        .nav{
+            display: block;
+        }
+       .menu-icon li:nth-child(1){
+            // 向下旋转
+            transform: rotateZ(40deg);
+        }
+       .menu-icon li:nth-child(2){
+            // 隐藏
+            opacity: 0;
+        }
+       .menu-icon li:nth-child(3){
+            transform: rotateZ(-40deg);
+        }
+    }
+}
+
+.logo{
+    a{
+        //首行缩进，将文字隐藏（因为需要搜索引擎识别网页内容，所以不能删）
+        text-indent: -9999px;
+        display: block;
+        width: 75px;
+        height: 20px;
+        background-image: url(../picture2/18/meitulogo.png);
+        background-size:75px 20px;
+    }
+}
+
+//设置媒体查询
+@media only screen{
+    // 这样写和加and写法是一样的
+    @media (min-width: 768px){
+        //调整位置
+        .left-menu{
+            //让他有增长系数，可以自己分配空间
+            flex: auto;
+            order: 2;
+            //隐藏菜单图标
+            .menu-icon{
+                display: none;
+            }
+            .nav{
+                display: flex;
+                position: static;
+                padding: 0;
+                justify-content: space-around;
+                li{
+                    width: auto;
+                    border-bottom: none;
+                    margin: 0;
+                    a{
+                        line-height: 48px;
+                        
+                    }
+                    span{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .logo{
+            order: 1;
+        }
+        .user-info{
+            order: 3;
+        }
+    }
+}

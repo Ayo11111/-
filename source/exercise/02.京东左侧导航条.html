@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body{background-color: pink;}
+      .box1{
+          width: 190px;
+          height: 450px;
+          background-color:#fefefe ;
+          padding: 10px 0px;
+          margin:10px auto 0px ;
+          /* overflow: hidden; */
+      }
+        li{
+            height: 25px;
+            /* 没指定宽度,所以宽度使auto,加18px后会自动满足等式,所以不会溢出 */
+            padding-left: 18px;
+             /* 让一个文字在父元素中垂直居中,只需将父元素的line-height设置为一个和父元素height一样的值 */
+            line-height: 25px;
+        }
+        .box1 li a{
+            color: #333;
+            font-size: 14px;
+            /* 文本修饰,去除下划线 */
+            text-decoration: none;
+            
+        }
+            ul li:hover{background-color: #d9d9d9;}
+          .box1 a:hover{color:#c81623;}
+        .c{ 
+            font-size: 12px;
+           padding: 0 2px;
+            color: #636363;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 因为行内元素换行或者有空格会导致显示内容也有空格,所以得放在一行 -->
+    <!-- 可选容器很多.nav(里面放div) div(里面也可以div) ul(li) -->
+    <div class="box2">
+    <ul class="box1">
+        <li><a href="###">家用电器</a></li>
+        <li>
+            <a href="###">手机</a><span class="c">/</span><a href="###">运营商</a><span class="c">/</span><a href="###">数码</a>
+        </li>
+        <li>
+<a href="###">电脑</a><span class="c">/</span><a href="###">办公</a>
+        </li>
+        <li>
+            <a href="###">家居</a><span class="c">/</span><a href="###">家具</a><span class="c">/</span><a href="###">家装</a><span class="c">/</span><a href="###">厨具</a>
+        </li>
+        <li>
+            <a href="###">男装</a><span class="c">/</span><a href="###">女装</a><span class="c">/</span><a href="###">童装</a><span class="c">/</span><a href="###">内衣</a>
+        </li>
+        <li>
+            <a href="###">美妆</a><span class="c">/</span><a href="###">个护清洁</a><span class="c">/</span><a href="###">宠物</a>
+        </li>
+        <li>
+            <a href="###">女鞋</a><span class="c">/</span><a href="###">箱包</a><span class="c">/</span><a href="###">钟表</a><span class="c">/</span><a href="###">珠宝</a>
+        </li>
+        <li>
+            <a href="###">男鞋</a><span class="c">/</span><a href="###">运动</a><span class="c">/</span><a href="###">户外</a>
+        </li>
+        <li>
+            <a href="###">房产</a><span class="c">/</span><a href="###">汽车</a><span class="c">/</span><a href="###">汽车用品</a>
+        </li>
+        <li>
+            <a href="###">母婴</a><span class="c">/</span><a href="###">玩具乐器</a>
+        </li>
+        <li>
+            <a href="###">食品</a><span class="c">/</span><a href="###">酒类</a><span class="c">/</span><a href="###">生鲜</a><span class="c">/</span><a href="###">特产</a>
+        </li>
+        <li>
+            <a href="###">艺术</a><span class="c">/</span><a href="###">礼品鲜花</a><span class="c">/</span><a href="###">农资绿植</a>
+        </li>
+        <li>
+            <a href="###">医药保健</a><span class="c">/</span><a href="###">计生情趣</a>
+        </li>
+        <li>
+            <a href="###">图书</a><span class="c">/</span><a href="###">文娱</a><span class="c">/</span><a href="###">教育</a><span class="c">/</span><a href="###">电子书</a>
+        </li>
+        <li>
+            <a href="###">机票</a><span class="c">/</span><a href="###">酒店</a><span class="c">/</span><a href="###">旅游</a><span class="c">/</span><a href="###">生活</a>
+        </li>
+        <li>
+            <a href="###">理财</a><span class="c">/</span><a href="###">众筹</a><span class="c">/</span><a href="###">白条</a><span class="c">/</span><a href="###">保险</a>
+        </li>
+        <li>
+            <a href="###">安装</a><span class="c">/</span><a href="###">维修</a><span class="c">/</span><a href="###">清洗</a><span class="c">/</span><a href="###">二手</a>
+        </li>
+        <li>
+            <a href="###">工业品</a>
+        </li>
+       
+    </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String.prototype.matchAll</title>
+</head>
+<body>
+    <!-- 这个方法用来得到正则批量匹配的结果 -->
+    <script>
+        let str = `<ul>
+            <li>
+                <a>肖生克的救赎</a>
+                <p>上映日期: 1994-09-10</p>
+            </li>
+            <li>
+                <a>阿甘正传</a>
+                <p>上映日期: 1994-07-06</p>
+            </li>
+        </ul>`;
+
+        //声明正则
+        const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/sg
+
+        //调用方法
+        const result = str.matchAll(reg);
+
+        // 因为里面有迭代器，所以可以for of和扩展运算符
+        // for(let v of result){
+        //     console.log(v);
+        // }
+
+        const arr = [...result];
+
+        console.log(arr);
+
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            水仙花数是指一个3位数，它的每个微上的数字的3次方之和等于本身
+                请打印所有的水仙花数
+        */
+
+            var count = 0;
+
+            //打印所有三位数
+            for(var i =100;i<1000;i++){
+
+                //获取百位上的数字
+                var bai =parseInt(i/100);
+                //获取十位数上
+                var shi =parseInt((i-bai*100)/10);
+                //获取个位数
+                var ge =i%10;
+
+                if(bai*bai*bai+shi*shi*shi+ge*ge*ge ==i){
+                        console.log(i);
+                        count++;
+                }    
+            }
+            console.log('水仙花数的个数为'+count);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

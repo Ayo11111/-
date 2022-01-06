@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        /*
+            * as 变量名
+                就是一次性全部导入
+        */
+        //1.通用的导入方式
+
+        //引入m1.js模块的内容
+        // import *as m1 from './m1.js';
+
+        // //引入m2.js的模块内容
+        // import *as m2 from './m2.js'
+
+        // //引入m3.js
+        // import *as m3 from './m3.js'
+         // console.log(m1)
+        // console.log(m2)
+        // console.log(m3);
+        // m3.default.change()
+
+        //2.结构赋值的形式
+        // import {school,teach} from'./m1.js'
+        // // 变量重名时可以使用 as 后面跟着别名
+        // import {school as guigu, findJob} from'./m2.js'
+        // //default后跟着的对象，必须使用别名，不能直接使用default
+        // import {default as m3} from'./m3.js'
+        // console.log(school)
+        // console.log(guigu,findJob)
+        // console.log(m3)
+       
+        // 简便形式(只能针对默认暴露)
+        import m3 from './m3.js';
+        console.log(m3);
+
+    
+    
+    </script>
+
+    <script src="./app.js" type="moduleM><?"></script>
+</body>
+</html>

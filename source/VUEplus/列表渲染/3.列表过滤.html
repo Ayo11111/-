@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <div id="root">
+        <input type="text" placeholder="请输入名字" v-model='keyWord'>
+        <ul>
+            <li v-for='(p,index) in filPerons' :key="p.id">{{p.name}}-{{p.age}}-{{p.sex}}</li>
+        </ul>
+
+    </div>
+    <script src="../vue.js/vue.js"></script>
+    <script>
+           Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。 
+
+           //用watch实现
+           //#region
+        //    new Vue({
+        //     el:'#root',
+        //     data:{
+        //         keyWord:'',
+        //         persons:[
+        //             {id:'001',name:'马冬梅',age:18, sex:'女'},
+        //             {id:'002',name:'周冬雨',age:19, sex:'女'},
+        //             {id:'003',name:'周杰伦',age:20, sex:'男'},
+        //             {id:'004',name:'温兆伦',age:20, sex:'男'}
+        //         ],
+        //         filPersons:[]
+        //     },
+        //     methods:{},
+        //     watch:{
+        //        keyWord:{
+        //             //因为上来就执行一次，用户什么都没输入，等于输入空串，空串匹配所有
+        //            immediate:true,
+        //            handler(val){
+        //                /*
+        //                 filter 过滤掉不想要的，留下想要的 
+        //                     参数：里面的每个数据
+
+        //                 返回过滤的条件  (匹配的条件)  
+        //                 不影响原数组，返回更改后的数组
+        //                 */ 
+
+        //                 this.filPersons = this.persons.filter((p)=>{
+        //                 return p.name.indexOf(val) !==-1
+
+        //                 })
+        //            }
+        //        }
+        
+        //     }    
+
+        //    })
+            //#endregion
+
+          //用computed实现  
+          new Vue({
+            el:'#root',
+            data:{
+                keyWord:'',
+                persons:[
+                    {id:'001',name:'马冬梅',age:18, sex:'女'},
+                    {id:'002',name:'周冬雨',age:19, sex:'女'},
+                    {id:'003',name:'周杰伦',age:20, sex:'男'},
+                    {id:'004',name:'温兆伦',age:20, sex:'男'}
+                ],
+                
+            },
+            computed:{
+                filPerons(){
+                   return this.filPersons = this.persons.filter((p)=>{
+                        return p.name.indexOf(this.keyWord) !==-1
+                    })
+                }
+            }
+           
+
+           })
+    </script>
+
+
+
+
+</body>
+</html>

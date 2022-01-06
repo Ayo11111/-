@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        事件的后面跟上.修饰符，可以对对事件的触发急性限制
+            例如 .enter 可以限制触发的按键为回车
+                事件修饰符有多种
+     -->
+    <div id="app">
+       <input type="button" value="点击" @click='doIt(666,"老铁666")'>
+       <input type="text" @keyup.enter='sayHi'>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#app',
+           methods:{
+             doIt:function(p1,p2){
+                 console.log('zuoid');
+                 console.log(p1);
+                 console.log(p2);
+             },
+             sayHi:function(){
+                 alert('吃鸡鸡');
+             }
+           }
+        })
+    </script>
+</body>
+</html>

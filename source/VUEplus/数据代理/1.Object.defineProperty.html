@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="../vue.js/vue.js"></script>
+    <script>
+           Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。 
+
+           new Vue({
+            el:'#root',
+            data:{
+
+            }   
+           })
+
+        let number = 18;   
+        let person = {
+            name:'张三',
+            sex:'男'
+        }   
+
+        /*
+          传三个参数：
+          1.给哪个对象添加属性 (对象名)
+          2.要添加的属性的名字 
+          3.配置项
+        */
+        Object.defineProperty(person,'age',{
+            // value:18,
+            // // 可列举的，可数的’l
+            // enumerable:true, //控制属性是否可以枚举 默认值是false
+            // writable:true,  //控制属性能否被修改  默认值是false
+            // configurable:true, //  控制属性是否可以被删除，默认值是false
+
+            //当有人读取person的age属性时，get函数=(getter)就会被调用，且返回值是age的值
+            get(){
+                return number
+            },
+
+            //当有人修改person的age属性时，set函数=(setter)就会被调用，且会收到修改的具体值
+            set(value){
+                console.log('有人修改了value,且值是')
+                value = number;
+            }
+        })
+        console.log(person);
+
+        /*
+            Object.keys() 可以把传入对象里的所有属性名提取出来，变成一个数组
+        */
+        // console.log(Object.keys(person));
+    </script>
+</body>
+</html>

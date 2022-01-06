@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+</head>
+<body>
+    <!-- 
+        列表（list）
+          1.铅笔
+          2.尺子
+          3，橡皮
+
+
+       在html中也可以创建列表，列表分为3种
+        1.有序列表
+        2.无序列表
+        3.定义列表
+        
+        有序列表用ol标签创建
+          使用li表示列表项
+
+          无序列表用ul标签创建
+           使用li表示列表项
+
+        定义列表，用dl标签创建
+          使用dt标签来表示定义内容
+          使用dd标签来对内容进行解释说明   
+     -->
+
+<ol>
+    <li>结构</li>
+    <li>表示</li>
+    <li>行为</li>
+</ol>
+
+<ul>
+    <li>结构</li>
+    <li>表示</li>
+    <li>行为</li>
+</ul>
+
+<!-- 一个dt可以有多个dd -->
+<dl>
+    <dt>定义的内容</dt>
+    <dd>对上面内容的解释</dd>
+    <dd>对上面内容的解释</dd>
+</dl>
+
+<!-- 列表之前可以互相嵌套 -->
+<ul>
+    <li>aa
+        <ul>
+            <li>bb
+                <ul>
+                    <li>ccc</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+</ul>
+</body>
+</html>

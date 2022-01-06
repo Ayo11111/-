@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        v-for指令
+            1、用于展示数据列表
+            2、语法：v-for='(item.index) in xxx' :key='yyy'
+            3可遍历：数组、对象、字符串（用得少）、指定次数(用得少)
+
+     -->
+    <div id="root">
+        <!--遍历数组 -->
+        <ul>
+            <li v-for='(p,index) in persons' :key="p.id">{{p.name}}-{{p.age}}</li>
+        </ul>
+
+        <!-- 遍历对象 -->
+        <ul>
+            <li v-for='(val,key) in car':key="key">{{key}}-{{val}}</li>
+        </ul>
+
+        <!-- 遍历字符串 (用的的少)-->
+        <ul>
+            <li v-for='(char,index) in str':key="index">{{char}}-{{index}}</li>
+        </ul>
+
+        <!-- 遍历指定次数 (用得少)-->
+        <ul>
+            <li v-for='(number,index) in 5':key="index">{{char}}-{{index}}</li>
+        </ul>
+    </div>
+    <script src="../vue.js/vue.js"></script>
+    <script>
+           Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。 
+
+           new Vue({
+            el:'#root',
+            data:{
+                persons:[
+                    {id:'001',name:'张三',age:18},
+                    {id:'002',name:'李四',age:19},
+                    {id:'003',name:'王五',age:20}
+                ],
+
+                car:{
+                    name:'A8',
+                    price:'10w',
+                    color:'黑色'
+                },
+                str:'hello'
+            },
+            methods:{
+
+            }   
+           })
+    </script>
+</body>
+</html>

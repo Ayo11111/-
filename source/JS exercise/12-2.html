@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        td {
+            padding: 0px;
+            height: 30px;
+        }
+
+        input {
+            margin: 0;
+            height: 36px;
+            width: 120px;
+        }
+
+        #content {
+            width: 600px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .del {
+            color: red;
+            text-decoration: none;
+        }
+
+        .edit {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .confirm {
+            color: blueviolet;
+            text-decoration: none;
+        }
+    </style>
+
+    <script>
+        /*
+            删除tr的响应函数
+        */
+           var delA = function () {
+                  // 要删除tr，所以要要先获取tr
+                  // 在响应函数里，this就是要绑定事件的那个元素
+                var tr = this.parentNode.parentNode;
+
+                // 获取名字变量
+                var name = tr.children[0].firstChild.value 
+
+
+                //做一个删除前确认
+                /*
+                    confirm() 用于弹出一个带有确认和取消按钮的提示框
+                    - 需要一个字符串作为参数，该肌肤穿将会作为提示文字显示
+                    - 如果用户点击确认则返回true，点击取消则返回false
+                */
+                var flag = confirm('确定要删除'+name+'吗？');
+
+                //做一个判断，看是否要删除
+                if (flag) {
+                     //删除tr
+                 tr.parentNode.removeChild(tr);
+                };
+               
+              };   
+
+
+
+        window.onload = function () {
+                
+                //获取所有a
+                var a = document.getElementsByTagName('a');
+                //获取提交按钮
+                var an = document.getElementById('addEmpButton');
+
+                //删除功能实现
+            //为每个超链接都绑定一个单击函数
+            for(var i=0;i<a.length;i++){
+              a[i].onclick = delA;
+            }
+            //添加信息功能
+            an.onclick = function () {
+                  //获取三个文本框的内容
+                  var name = document.getElementById("empName").value;   
+                  var email = document.getElementById("email").value;   
+                  var salary = document.getElementById("salary").value;   
+
+                //创建一个tr
+                var tr = document.createElement('tr');
+
+               //设置tr中的内容
+               tr.innerHTML = '<td>'+name+'</td>'+
+                              '<td>'+email+'</td>'+  
+                              '<td>'+salary+'</td>'+  
+                              '<td><a href="javascript:;">删除</a></td>';  
+
+                //获取刚刚添加的a元素，并为其绑定单击响应函数
+                var a = tr.getElementsByTagName('a')[0];
+                a.onclick = delA;              
+               
+                //获取table
+                var table = document.getElementById('employeeTable');
+
+                //获取tbody,因为返回的是数组，记得加索引
+                var tbody = table.getElementsByTagName('tbody')[0];
+
+                //将tr添加到tbody中
+                tbody.appendChild(tr);
+            };
+
+        };
+    </script>
+</head>
+
+<body>
+    <div id="content">
+
+        <table id="employeeTable" border="1px solid black" style=" border-collapse: collapse">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>操作 </th>
+                
+            </tr>
+            <tr>
+                <td><input value="Tom" name="inform"></input></td>
+                <td><input value="tom.com" name="inform"></input></td>
+                <td><input value="5000" name="inform"></input></td>
+                <td><a href="#" class="del">删除</a></td>
+                
+            </tr>
+            <tr>
+                <td><input value="Jerry" name="inform"></input></td>
+                <td><input value="Jerry.com" name="inform"></input></td>
+                <td><input value="8000" name="inform"></input></td>
+                <td><a href="#" class="del">删除</a></td>
+                
+            </tr>
+            <tr>
+                <td><input value="lina" name="inform"></input></td>
+                <td><input value="lina.com" name="inform"></input></td>
+                <td><input value="9000" name="inform"></input></td>
+                <td><a href="#" class="del">删除</a></td>
+                
+            </tr>
+        </table>
+
+
+        <div id="formDiv">
+            <h4>添加员工</h4>
+            <table border="1px solid black" style=" border-collapse: collapse">
+                <tr>
+                    <td class="word">name:</td>
+                    <td class="inp">
+                        <input type="text" name="empName" id="empName">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="word">email</td>
+                    <td class="inp">
+                        <input type="text" name="empName" id="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="word">salary</td>
+                    <td class="inp">
+                        <input type="text" name="empName" id="salary">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button id="addEmpButton" value="abc">
+                            提交
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

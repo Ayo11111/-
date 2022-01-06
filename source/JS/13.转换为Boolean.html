@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            讲其他数据类型转换为Boolean
+                -使用Boolean（）函数
+                    -数字 -- 布尔
+                        -除了0 和 NaN其余的都是true。
+
+                  -字符串 -- 布尔
+                    -除了空串，其余都是true      
+
+                    null 和 undefined都会转换为false
+                    -对象也会转换为true
+
+             方式二（隐式类型转换）：
+                为任意数据类型转换做两次非运算，即可将其转换为布尔值
+                -例子：
+                    var a ='heelo';
+                    a = !!a;//true       
+        */
+       var a = 123;
+
+       a = null; //false
+       a = Boolean(a);
+
+       a = undefined;//false
+       a = Boolean(a);
+
+        //调用Boolean()函数来将a转换为布尔值
+            a = Boolean(a);
+
+       console.log(a);
+       console.log(typeof a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

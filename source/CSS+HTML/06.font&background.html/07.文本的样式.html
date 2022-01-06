@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            border: black 1px solid;
+            /* 
+                text-indent 首行缩进，设置足够大的负值就可以隐藏文字
+            */
+            /* text-indent: -1000px; */
+            /* 
+                text-align 文字的水平对齐 （只能设置给块元素）
+                    可选值：
+                        left 左侧对齐
+                        right 右对齐
+                        ceter 居中对齐
+                        justify 两端对齐
+            */
+            /* text-align: center; */
+            font-size: 50px;
+        }
+        span{
+            font-size: 20px;
+            border: 1px solid green;
+
+            /*vertical-align 设置元素的垂直对齐的方式（子元素和父元素对齐）
+                设置给子元素
+                可选值：
+                    baseline 默认值，基线对齐
+                    top 顶部对齐
+                    bottom 底部对齐
+                    middle 居中对齐（将子元素的中线和x的中线对齐）
+
+                    可以直接设置值，正值子元素上移，负值子元素下移
+            */
+            /* vertical-align: -100px; */
+            vertical-align: middle;
+        }
+        p{
+            border: 1px red solid;
+        }
+        /* 不要让图片基线对齐，就可以消灭底下的缝 */
+        img{
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio velit quas facilis rerum in ut eum, laudantium quisquam libero dolore mollitia quaerat, est enim voluptatum vitae magni odit neque placeat.
+    </div> -->
+    <div>
+        今天天气HELLOx<span>真不错 hello</span>！
+        
+    </div>
+    <p>
+        <img src="./img/1.jpeg" alt="">
+    </p>
+</body>
+</html>

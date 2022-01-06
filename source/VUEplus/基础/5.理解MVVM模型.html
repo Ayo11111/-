@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        vue实例有的东西的都可以在插值表达式中输入
+
+        MVVM模型
+            1.M：模型（model）：data中的数据
+            2.V：视图(view)：模板代码
+            3.VM:视图模型（ViewModel）：Vue实例
+        观察发现：
+            1.data中所有的属性，最后都能出现在了vm身上
+            2.vm身上所有的属性 及 Vue原型上所有属性，在Vue模板中都可以直接使用    
+     -->
+    <div id="root">
+        <h1>学校名称{{name}}</h1>
+        <h1>学校地址{{adress}}</h1>
+        <h1>{{$emit}}</h1>
+    </div>
+    <script src="./vue.js/vue.js"></script>
+    <script>
+           Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示。 
+
+          const vm = new Vue({
+            el:'#root',
+            data:{
+                name:'shangguigu',
+                adress:'兴宁'
+            }   
+           })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>相对路径</title>
+</head>
+<body>
+    <!-- 
+        当我们需要跳转一个服务器内部的页面时，一般我们都会使用相对路径
+           相对路径都会使用.或者..开头
+           ./或../
+
+           ./可以省略不懈，如果不写./也不写../就等于写了./
+
+           ./表示当前文件所在目录
+            
+           ../表示当前文件所在目录的上一级目录
+
+           ../../表示上两次目录
+
+
+     -->
+<a href="../../path/target.html">超链接1</a>
+<br><br>
+<a href="../path1/target3.html">超链接2</a>
+<br><br>
+<a href="./inner.html/target4.html">超链接3</a>
+
+
+
+
+</body>
+</html>

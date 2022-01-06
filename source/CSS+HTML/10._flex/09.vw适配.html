@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            /* 
+                网页中，字体大小最小是12px，不能设置比12px还小的像素，除了0
+                    如果设置一个小于12px的字体，则字体自动设置为12
+
+                    0.1333333vw = 1px
+
+                    5.3333vw = 40px
+            */
+            font-size: 5.333333333333333vw;
+        }
+        .box1{
+            /* 
+                rem
+                    -1rem = 1 html的字体大小
+            */
+            width: 2rem;
+            height: 0.875rem;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        48 * 35
+
+     -->
+    <div class="box1"></div>
+</body>
+</html>

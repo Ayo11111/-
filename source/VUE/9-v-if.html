@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- v-if：根据表达式的真假，切换元素的显示状态（操纵dom元素）
+        
+        DOM树是指所有标签的结构树
+
+        表达式为true，元素存在于dom树中，反之则从dom树中移除
+
+        频繁的切换用v-show，反之使用v-if 前者的切换消耗小
+    -->
+    <div id="app">
+        <input type="button" value="切换显示" @click='toggleIsShow'>
+        <p v-if='isShow'>帅哥是我</p>
+        <p v-show='isShow'>帅哥是我- v-show修饰</p>
+        <h2 v-if='temperature>=35'>微波荡漾</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+               isShow:false,
+               temperature:20     
+            },
+            methods:{
+                toggleIsShow:function(){
+                    this.isShow=!this.isShow;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
